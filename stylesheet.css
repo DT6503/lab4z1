@@ -1,0 +1,278 @@
+/* 1. универс-ый селектор - базовая настройка */
+* {
+    transition: all 0.3s ease;
+    /* плавные переходы для интер-ти */
+}
+
+/* 2. сел-ры по тегу - с базовыми эл-ми */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+
+h1 {
+    color: red;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.1);
+    /*2px - смещение тени по горизонтали (вправо)
+2px - смещение тени по вертикали (вниз)
+9px - радиус размытия тени
+rgba(0, 0, 0, 0.1) - цвет тени (черный с 10% непрозрачности)*/
+}
+
+h2 {
+    color: orange;
+    border-left: 4px solid orange; /*верт линия!*/
+    padding-left: 10px; /*внут-ий отступ слева*/
+}
+
+/* 1ый h3 будет розовым */
+h3:first-of-type {
+    color: pink;
+    background: linear-gradient(90deg, pink, white);
+    padding: 8px;
+    border-radius: 5px; /*скругл-ие углов*/
+}
+
+/* 2ой h3 - бордовый, т.к. n=2 */
+h3:nth-of-type(2) {
+    color: rgb(99, 9, 9);
+    border-bottom: 2px solid maroon;
+}
+
+/* все параграфы по ум-ию фиол-ые */
+p {
+    color: rgb(148, 51, 148);
+    margin: 10px 0;
+}
+
+/* 3. селекторы по классу*/
+.main-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px; /*внеш-ий отступ снизу эл-а*/
+}
+
+.nav-list {
+    list-style-type: none;    /* убир-ю маркеры (точки/цифры) у списка */
+    padding: 0;               /* убир-ю внутр-ие отступы списка */
+    display: flex;            /* вкл-ет Flexbox-раскладку */
+    gap: 250px;                /* рааст-ие между эл-ами 20px */
+    justify-content: center;  /* выравнивание элов по центру */
+    background: white;        /* белый фон */
+    padding: 15px;            /* доб-ет внутр-ие отступы 15px */
+    border-radius: 10px;      /* закруг-ие углов 10px */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+    font-size: large;
+}
+
+/* ссылки навигации */
+.link {
+    text-decoration: none;
+    color: green;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.special-link {
+    color: blue;
+    background-color: #e6f7ff;
+}
+
+/*чтобы 3ья ссылка окрасилась в жёлтый, а не зелёный*/
+.nav-list li:nth-child(3) .link {
+    color: rgb(255, 208, 0);
+    
+}
+
+.content {
+    margin: 30px 0;
+    display: grid;
+    gap: 20px;
+}
+
+.post {
+    margin-bottom: 25px;                   /* от-уп снизу 25px */
+    padding: 20px;                         /* внутр-ие отступы 20px */
+    border: 1px solid #ddd; /*прим-ся только ко 2му блоку*//* серая рамка толщ-ой 1px */
+    border-radius: 8px;                    /* закруг-ие углов 8px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* легкая тень */
+}
+
+.sidebar {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.widget {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+}
+
+.important-widget {
+    border: 2px solid #333;
+    background: #fffaf0;
+}
+
+.highlighted {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.submit-btn {
+    padding: 10px 20px;      /* внутр-ие отступы: 10px сверху/снизу, 20px слева/справа */
+    cursor: pointer;         /* меняет курсор на "руку" при наве-ии */
+    border-radius: 5px;      /* закр-е углы на 5px */
+    font-weight: bold;       /* Делает текст жирным */
+}
+
+/* 4. селекторы по идент-ру - уникальные элементы */
+#first-post {
+    background: #fff9e6;
+    border-color: orange;
+}
+
+#first-post p {
+    color: orange;
+    font-style: italic;
+}
+
+#name {
+    width: 250px;
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 5. атр-ые селекторы - работа с атрибутами */
+[placeholder="Белый"] {
+    color: white;
+    background-color: #333;
+    border-color: #666;
+}
+
+[type="text"] {
+    font-size: 14px;
+}
+
+[type="submit"] {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* 6. псевдкласы и псевэл-ы - динам-ие состояния */
+
+.submit-btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* раскр-ию элементы списка */
+.color-list li:nth-child(1) {
+    color: gray;
+    list-style-type: circle; /*круглые маркеры*/
+}
+
+.color-list li:nth-child(2) {
+    color: rgb(58, 20, 20);
+    list-style-type: square;
+}
+
+.color-list li:nth-child(3) {
+    color: black;
+    list-style-type: disc;
+    font-weight: bold;
+}
+
+/* длб-яю иконку перед заметкой */
+.note::before {
+    content: "💡 ";
+    font-size: 1.2em;
+}
+
+.note {
+    color: maroon;
+    background: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 4px solid maroon;
+}
+
+/* 2ой пост - особый стиль */
+.post:nth-child(2) {
+    background: #f8f0ff;
+}
+
+.post:nth-child(2) p {
+    color: purple;
+    font-weight: 500;
+}
+
+/* 7. селек-ы потомков - вложенные элементы */
+.nav-list li a {
+    display: block;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.content .post h2 {
+    margin-top: 0;
+    color: inherit;
+}
+
+.sidebar .widget h3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 8. селе-ы соседей - соседние элементы */
+h2+p {
+    margin-top: 12px;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.02); /*полупрозрачный серый фон!*/
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.widget+.widget { /*полное совп-ие назв-ий классов не нужно!!!*/
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #ddd; /*пунктир*/
+}
+
+.form label+input {
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* доп-ые стили для улучш-ия внешнего вида */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
